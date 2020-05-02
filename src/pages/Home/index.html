@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./home.css" />
+    <title>Bin2Dec</title>
+  </head>
+
+  <body id="container">
+    <div id="contentBox">
+      <div id="content">
+        <h1>Bin2Dec</h1>
+
+        <div id="converterBox">
+          <div>
+            <span id="inputBox">
+              <input
+                id="binaryInput"
+                class="gate"
+                type="number"
+                placeholder="Either 0 or 1"
+                name="Binary"
+                onchange="checkField"
+              />
+              <label for="binaryInput">Binary</label>
+            </span>
+
+            <span id="responseBox">
+              <label>Decimal</label>
+              <output>0</output>
+            </span>
+          </div>
+        </div>
+
+        <button>Convert</button>
+
+        <footer>
+          <span>&copy; </span>
+          <a href="https://www.instagram.com/espelhoinvertido" target="blank"
+            >Espelho Invertido</a
+          >
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script src="./home.js"></script>
+</html>
