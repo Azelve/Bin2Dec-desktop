@@ -3,10 +3,13 @@
   src: url("../../assets/fonts/PixeLCD.ttf");
 }
 
+:root {
+  --background-label: #008000;
+}
+
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
   font-family: "pixelFont";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,25 +21,24 @@ body {
 h1 {
   text-align: center;
 
+  margin-bottom: 50px;
+
   color: #00b300;
 }
 
 button {
+  font-family: "pixelFont";
   font-size: 20px;
-
-  margin-top: 15px;
-
+  margin-top: 25px;
   outline: none;
-
   cursor: pointer;
-
   height: 40px;
   text-align: center;
   width: 130px;
   border-radius: 40px;
   background: #000;
-  border: 2px solid green;
-  color: green;
+  border: 2px solid #00b300;
+  color: #00b300;
   letter-spacing: 1px;
   text-shadow: 0;
   transition: 0.3s ease;
@@ -44,12 +46,12 @@ button {
 
 button:hover {
   color: #000;
-  background: green;
+  background: #00b300;
   box-shadow: rgba(0, 255, 0, 0.8);
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: 50px;
   color: white;
   padding: 5px;
 }
@@ -63,6 +65,7 @@ footer a {
   color: white;
   text-decoration: none;
   transition: 0.3s ease;
+  cursor: pointer;
 }
 
 footer a:hover {
@@ -78,9 +81,26 @@ input::-webkit-inner-spin-button {
   -moz-appearance: textfield;
 }
 
-/* INPUT CLASS */
+#close-btn {
+  font-size: 25px;
+  font-family: "pixelFont";
+  height: 50px;
 
-#contentBox {
+  border: none;
+  border-radius: 50%;
+
+  width: 50px;
+
+  margin-top: 15px;
+  margin-right: 15px;
+
+  position: absolute;
+  justify-self: flex-end;
+  top: 0px;
+  right: 6px;
+}
+
+#content-box {
   max-width: 1120px;
   width: 100%;
   height: 100vh;
@@ -100,7 +120,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 
-#converterBox {
+#converter-box {
   max-width: 400px;
   max-height: 300px;
 
@@ -118,7 +138,7 @@ input::-webkit-inner-spin-button {
   background-color: white;
 }
 
-#converterBox div {
+#converter-box div {
   padding: 20px;
 
   height: 100%;
@@ -129,45 +149,49 @@ input::-webkit-inner-spin-button {
   justify-content: space-evenly;
 }
 
-#inputBox {
+#input-box {
   display: inline-block;
   position: relative;
 }
 
 .gate {
   display: inline-block;
-  width: 215px;
-  padding: 10px 0 10px 15px;
-  font-family: "Open Sans", sans;
-  font-weight: 400;
-  color: #377d6a;
+  width: 250px;
+  padding: 10px 0 10px 35px;
+  color: #0c7b49;
   background: #efefef;
   border: 0;
   border-radius: 3px;
   outline: 0;
   text-indent: 65px;
   transition: all 0.3s ease-in-out;
+  margin-left: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: serif;
 }
 
 .gate::-webkit-input-placeholder {
   color: #efefef;
   text-indent: 0;
   font-weight: 300;
+  font-size: 18px;
 }
 
 .gate + label {
   display: inline-block;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2.3px;
+  left: 30px;
   padding: 10px 15px;
   text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
-  background: #7ab893;
+  background: #0c7b49;
   transition: all 0.4s ease-in-out;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   transform-origin: left bottom;
   z-index: 99;
+  border-radius: 8px;
 }
 
 .gate + label::before,
@@ -175,11 +199,11 @@ input::-webkit-inner-spin-button {
   content: "";
   position: absolute;
   top: 0;
-  right: 0;
+  right: 0px;
   bottom: 0;
   left: 0;
-  border-radius: 3px;
-  background: #377d6a;
+  border-radius: 8px;
+  background: var(--background-label); /*THE MAIN BACKGROUND */
   transform-origin: left bottom;
   transition: all 0.4s ease-in-out;
   pointer-events: none;
@@ -203,7 +227,7 @@ input::-webkit-inner-spin-button {
 
 .gate:focus,
 .gate:active {
-  color: #377d6a;
+  color: #0c7b49;
   text-indent: 0;
   background: #fff;
   border-top-right-radius: 3px;
@@ -218,7 +242,7 @@ input::-webkit-inner-spin-button {
 .gate:focus + label,
 .gate:active + label {
   transform: rotate(-66deg);
-  border-radius: 3px;
+  border-radius: 8px;
 }
 
 .gate:focus + label::before,
@@ -226,15 +250,15 @@ input::-webkit-inner-spin-button {
   transform: rotate(10deg);
 }
 
-#responseBox {
+#response-box {
   margin: 0px 40px;
 }
 
-#responseBox label {
+#response-box label {
   color: #008000;
 }
 
-#responseBox output {
+#response-box output {
   display: flex;
   justify-content: start;
   width: 180px;
@@ -247,6 +271,7 @@ input::-webkit-inner-spin-button {
   border-radius: 3px;
   outline: 0;
   margin-top: 5px;
+  letter-spacing: 2px;
 
   font-size: 16px;
   font-weight: bold;

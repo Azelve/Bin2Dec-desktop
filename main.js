@@ -1,19 +1,75 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 
 function createWindow() {
   let win = new BrowserWindow({
     width: 1200,
     height: 1000,
+    frame: false,
+    resizable: false,
+    icon: __dirname + "/src/assets/images/binary.png",
     webPreferences: {
       nodeIntegration: true,
     },
   });
-  let child = new BrowserWindow({ parent: win, modal: true, show: false });
-
-  child.loadURL("https://github.com");
-  child.once("ready-to-show", () => {
-    child.show();
+  let child = new BrowserWindow({
+    width: 1000,
+    height: 800,
+    parent: win,
+    transparent: true,
+    modal: true,
+    show: false,
+    icon: __dirname + "/src/assets/images/mirror.png",
   });
+
+  child.once("ready-to-show", () => child.show());
+  child.loadURL("https://instagram.com/espelhoinvertido");
+
+  // INSTAGRAM WINDOW
+  win.webContents.on("new-window", (event, url, frameName) => {
+    if (frameName === "Espelho Invertido") {
+      // open window as modal
+      event.preventDefault();
+      // Object.assign(options, {
+      const mirrorWindow = new BrowserWindow({
+        width: 1000,
+        height: 800,
+        parent: win,
+        transparent: true,
+        modal: true,
+        frame: true,
+        resizable: false,
+        show: false,
+        icon: __dirname + "/src/assets/images/mirror.png",
+      });
+
+      mirrorWindow.once("ready-to-show", () => mirrorWindow.show());
+      mirrorWindow.loadURL(url);
+      event.newGuest = mirrorWindow.setTitle(`${frameName}`);
+
+      // ERROR WINDOW
+    } else if (frameName === "Error") {
+      event.preventDefault();
+
+      const errorWindow = new BrowserWindow({
+        width: 1000,
+        height: 800,
+        parent: win,
+        modal: true,
+        frame: false,
+        show: false,
+        icon: __dirname + "/src/assets/images/error.png",
+        webPreferences: {
+          nodeIntegration: true,
+        },
+      });
+
+      errorWindow.once("ready-to-show", () => errorWindow.show());
+      errorWindow.loadFile(__dirname + "/src/pages/Error/index.html");
+      event.newGuest = errorWindow.setTitle(`${frameName}`);
+    }
+  });
+
+  // Menu.setApplicationMenu(null);
   win.loadFile(__dirname + "/src/pages/Home/index.html");
 }
 

@@ -4,42 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./home.css" />
-    <title>Bin2Dec</title>
+    <title>BIN2DEC</title>
   </head>
 
   <body id="container">
-    <div id="contentBox">
+    <div id="content-box">
+      <button id="close-btn">x</button>
       <div id="content">
         <h1>Bin2Dec</h1>
 
-        <div id="converterBox">
+        <div id="converter-box">
           <div>
-            <span id="inputBox">
+            <span id="input-box">
               <input
-                id="binaryInput"
+                id="binary-input"
                 class="gate"
                 type="number"
                 placeholder="Either 0 or 1"
                 name="Binary"
-                onchange="checkField"
+                onchange="checkField()"
               />
-              <label for="binaryInput">Binary</label>
+              <label id="binary-label" for="binary-input" class="label">
+                Binary
+              </label>
             </span>
 
-            <span id="responseBox">
-              <label>Decimal</label>
-              <output>0</output>
+            <span id="response-box">
+              <label id="decimal-label" class="label">Decimal</label>
+              <output id="decimal-output">0</output>
             </span>
           </div>
         </div>
 
-        <button>Convert</button>
+        <button onclick="convert()">Convert</button>
 
         <footer>
           <span>&copy; </span>
-          <a href="https://www.instagram.com/espelhoinvertido" target="blank"
-            >Espelho Invertido</a
-          >
+          <a id="mirror">Espelho Invertido</a>
         </footer>
       </div>
     </div>
