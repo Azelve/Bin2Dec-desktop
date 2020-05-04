@@ -69,7 +69,7 @@ function createWindow() {
     }
   });
 
-  // Menu.setApplicationMenu(null);
+  Menu.setApplicationMenu(null);
   win.loadFile(__dirname + "/src/pages/Home/index.html");
 }
 
