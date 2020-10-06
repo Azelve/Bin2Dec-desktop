@@ -10,6 +10,6 @@
   "author": "Rodrigo Camilo",
   "license": "SEE LICENSE IN LICENSE FILE",
   "devDependencies": {
-    "electron": "^8.2.5"
+    "electron": "^8.5.1"
   }
 }
