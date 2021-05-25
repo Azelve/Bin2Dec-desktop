@@ -1,4 +1,32 @@
-<h1 align="center">
+
+# Bin2Dec - Desktop
+
+Desktop application to convert binary number to decimal number.
+
+## Features
+
+- User can enter up to 8 binary digits in one input field
+ - User is notified if anything other than a 0 or 1 was entered
+ - User views the results in a single output field containing the decimal (base 10) equivalent of the binary number that was entered
+
+
+  
+## Tech Stack
+
+**Desktop:** [Electron](https://www.electronjs.org/)
+
+  
+## Demo
+
+<img src="src/assets/readme/bin2dec-desktop.gif"/>
+
+  
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+<!-- <h1 align="center">
 <br>
   Bin2Dec - Desktop
 </h1>
@@ -69,4 +97,4 @@ You will also see any lint errors in the console.
 
 ## Useful links and resources <a id="-links"></a>
 
-[Binary number system](https://en.wikipedia.org/wiki/Binary_number)
+[Binary number system](https://en.wikipedia.org/wiki/Binary_number) -->
