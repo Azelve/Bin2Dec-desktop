@@ -13,7 +13,7 @@ Desktop application to convert binary number to decimal number.
   
 ## Tech Stack
 
-**Client:** [Electron](https://www.electronjs.org/)
+- [Electron](https://www.electronjs.org/)
 
   
 ## Demo
