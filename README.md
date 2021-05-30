@@ -36,13 +36,13 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  yarn add
+  yarn add or npm install
 ```
 
 Start the app
 
 ```bash
-  yarn start
+  yarn start or npm start
 ```
 
 ## Authors
