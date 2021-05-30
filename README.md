@@ -51,7 +51,7 @@ Start the app
   
 ## Acknowledgements
 
- - [Michael Arestad](https://codepen.io/MichaelArestad/pen/ohLIa)
+ - [Codepen](https://codepen.io/MichaelArestad/pen/ohLIa)
  - [wikiHow](https://www.wikihow.com/Convert-from-Binary-to-Decimal)
 
 ## Related
